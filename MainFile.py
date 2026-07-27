@@ -94,10 +94,9 @@ def mouse_click_callback(event, x, y, flags, param):
         current_filter = (current_filter + 1) % len(filter_names)
         switch_flash_endtime = time.time() + 0.3  # Flash green for 0.3 seconds
 
-# Setup full screen window display
+# Setup standard resizable window display
 window_name = "Hand Frame Filter"
-cv2.namedWindow(window_name, cv2.WND_PROP_FULLSCREEN)
-cv2.setWindowProperty(window_name, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)  # Creates a normal, resizable window
 cv2.setMouseCallback(window_name, mouse_click_callback)
 
 print("--- CONTROLS ---")
